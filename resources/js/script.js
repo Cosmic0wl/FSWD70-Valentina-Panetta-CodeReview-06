@@ -1,4 +1,3 @@
-"use strict";
 // Parent Class
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -13,7 +12,6 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-exports.__esModule = true;
 var Place = /** @class */ (function () {
     function Place(image, name, city, address, zipCode, date) {
         this.image = "";
@@ -83,24 +81,39 @@ var locations = [];
 // places
 locations.push(new Place("resources/img/cliffs.jpg", "Cliffs of Moher", "Linnascor", "County Clare", "037111", new Date(2018, 11, 24)));
 locations.push(new Place("resources/img/skansen.jpg", "Skansen", "Stockholm", "Djurgårdsslätten 51", "11521", new Date(2017, 11, 24)));
-locations.push(new Place("resources/img/highgate.jpg", "Highgate Cemetery", "London", "Swain's Lane", "N66PJ", new Date(2019, 11, 24)));
+locations.push(new Place("resources/img/highgate.jpg", "Highgate Cemetery", "London", "Swain's Lane", "N66PJ", new Date(2019, 7, 12)));
 locations.push(new Place("resources/img/holyrood.jpg", "Holyrood Abbey", "Edinburgh", "Canongate", "8DX", new Date(2018, 1, 24)));
 // restaurants
-locations.push(new Restaurant("resources/img/peggy.jpg", "Peggy Porschen", "London", "116 Ebury St", "SW1W", new Date(2018, 11, 25), "thai", "+43(1)5812308", "www.website.at"));
-locations.push(new Restaurant("resources/img/milktrain.jpg", "Milk Train", "London", "12 Tavistock St", "WC2E", new Date(2018, 11, 14), "thai", "+43(1)5812308", "www.website.at"));
-locations.push(new Restaurant("resources/img/bao.jpeg", "BAO Soho", "London", "53 Lexington St", "W1F", new Date(2018, 11, 25), "thai", "+43(1)5812308", "www.website.at"));
-locations.push(new Restaurant("resources/img/poule.jpg", "La Poule au Pot", "London", "231 Ebury St", "SW1W", new Date(2018, 11, 14), "thai", "+43(1)5812308", "www.website.at"));
+locations.push(new Restaurant("resources/img/peggy.jpg", "Peggy Porschen", "London", "116 Ebury St", "SW1W", new Date(2019, 3, 25), "thai", "+43(1)5812308", "www.website.at"));
+locations.push(new Restaurant("resources/img/milktrain.jpg", "Milk Train", "London", "12 Tavistock St", "WC2E", new Date(2019, 3, 4), "thai", "+43(1)5812308", "www.website.at"));
+locations.push(new Restaurant("resources/img/bao.jpeg", "BAO Soho", "London", "53 Lexington St", "W1F", new Date(2017, 3, 25), "thai", "+43(1)5812308", "www.website.at"));
+locations.push(new Restaurant("resources/img/poule.jpg", "La Poule au Pot", "London", "231 Ebury St", "SW1W", new Date(2017, 11, 14), "thai", "+43(1)5812308", "www.website.at"));
 // events
 locations.push(new Concert("resources/img/hozier.jpg", "Hozier", "Vienna", "Wiener Konzerthaus", "1030", new Date(2019, 3, 17), "22 febbraio 2019", "8pm", "from 50 euro"));
-locations.push(new Concert("resources/img/mitski.jpg", "Mitski", "Vienna", "Flex", "1010", new Date(2019, 3, 17), "22 febbraio 2019", "8pm", "from 50 euro"));
-locations.push(new Concert("resources/img/weyes.jpg", "Weyes Blood", "Vienna", "Flex", "1010", new Date(2019, 3, 17), "22 febbraio 2019", "8pm", "from 50 euro"));
-locations.push(new Concert("resources/img/florence.jpg", "Florence and the Machine", "Vienna", "Flex", "1010", new Date(2019, 3, 17), "22 febbraio 2019", "8pm", "from 50 euro"));
+locations.push(new Concert("resources/img/mitski.jpg", "Mitski", "Vienna", "Flex", "1010", new Date(2019, 8, 17), "22 febbraio 2019", "8pm", "from 50 euro"));
+locations.push(new Concert("resources/img/weyes.jpg", "Weyes Blood", "Vienna", "Flex", "1010", new Date(2016, 3, 17), "22 febbraio 2019", "8pm", "from 50 euro"));
+locations.push(new Concert("resources/img/florence.jpg", "Florence and the Machine", "Vienna", "Flex", "1010", new Date(2017, 3, 17), "22 febbraio 2019", "8pm", "from 50 euro"));
+// Sorting function ascending
+function sortAscending() {
+    locations.sort(function (post1, post2) {
+        return post1.date.getTime() - post2.date.getTime();
+    });
+}
+// Sorting function descending
+function sortDescending() {
+    locations.sort(function (post1, post2) {
+        return post2.date.getTime() - post1.date.getTime();
+    });
+}
+var currentPath = window.location.pathname;
+var currentPage = currentPath.split("/").pop();
+if (currentPage == "index_asc.html") {
+    sortAscending();
+}
+else if (currentPage == "index_desc.html") {
+    sortDescending();
+}
 // renders in html
 for (var iter in locations) {
     locations[iter].display();
 }
-//test function
-function test() {
-    document.getElementById("test").style.color = "red";
-}
-document.getElementById("ascending").addEventListener("click", test, false);

@@ -1,7 +1,3 @@
-// Set Content function
-
-// document.addEventListener("DOMContentLoaded")
-
 // Parent Class
 
 class Place {
@@ -24,7 +20,6 @@ class Place {
 	//get card function
 	getCard(): string {
 		return `<div class="col-lg-3 col-md-6 col-sm-12">
-				
 				<div class="card">
   				<img class="card-img-top" src=${this.image} alt="location">
   				<div class="card-body">
@@ -117,8 +112,8 @@ class Concert extends Place {
 
 // Instances
 
-
 let locations: Array<Place> = [];
+
 // places
 locations.push(new Place("resources/img/cliffs.jpg", "Cliffs of Moher", "Linnascor", "County Clare", "037111", new Date(2018, 11, 24)));
 locations.push(new Place("resources/img/skansen.jpg", "Skansen", "Stockholm", "Djurgårdsslätten 51", "11521", new Date(2017, 11, 24)));
@@ -131,16 +126,31 @@ locations.push(new Restaurant("resources/img/milktrain.jpg", "Milk Train", "Lond
 locations.push(new Restaurant("resources/img/bao.jpeg", "BAO Soho", "London", "53 Lexington St", "W1F", new Date(2018, 11, 25), "thai", "+43(1)5812308", "www.website.at"));
 locations.push(new Restaurant("resources/img/poule.jpg", "La Poule au Pot", "London", "231 Ebury St", "SW1W", new Date(2018, 11, 14), "thai", "+43(1)5812308", "www.website.at"));
 
-//events
+// events
 locations.push(new Concert("resources/img/hozier.jpg", "Hozier", "Vienna", "Wiener Konzerthaus", "1030", new Date(2019, 3, 17), "22 febbraio 2019", "8pm", "from 50 euro"));
 locations.push(new Concert("resources/img/mitski.jpg", "Mitski", "Vienna", "Flex", "1010", new Date(2019, 3, 17), "22 febbraio 2019", "8pm", "from 50 euro"));
 locations.push(new Concert("resources/img/weyes.jpg", "Weyes Blood", "Vienna", "Flex", "1010", new Date(2019, 3, 17), "22 febbraio 2019", "8pm", "from 50 euro"));
 locations.push(new Concert("resources/img/florence.jpg", "Florence and the Machine", "Vienna", "Flex", "1010", new Date(2019, 3, 17), "22 febbraio 2019", "8pm", "from 50 euro"));
 
 
+// renders in html
 
-console.log(locations);
 for(let iter in locations) {
-	console.log(locations[iter]);
 	locations[iter].display();
 }
+
+//test function
+function test() {
+	document.getElementById("test").style.color = "red";
+}
+
+
+document.getElementById("ascending").addEventListener("click", test, false);
+
+export * from "./script";
+
+
+
+
+
+

@@ -1,4 +1,5 @@
-// Set Content function
+"use strict";
+// Parent Class
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -12,8 +13,7 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-// document.addEventListener("DOMContentLoaded")
-// Parent Class
+exports.__esModule = true;
 var Place = /** @class */ (function () {
     function Place(image, name, city, address, zipCode, date) {
         this.image = "";
@@ -31,7 +31,7 @@ var Place = /** @class */ (function () {
     }
     //get card function
     Place.prototype.getCard = function () {
-        return "<div class=\"col-lg-3 col-md-6 col-sm-12\">\n\t\t\t\t\n\t\t\t\t<div class=\"card\">\n  \t\t\t\t<img class=\"card-img-top\" src=" + this.image + " alt=\"location\">\n  \t\t\t\t<div class=\"card-body\">\n    \t\t\t<h5 class=\"card-title\">" + this.name + "</h5>\n    \t\t\t<p class=\"card-text\">" + this.address + " " + this.zipCode + "</p>\n    \t\t\t<p class=\"card-text\">" + this.city + "</p>\n    \t\t\t<p>" + this.date.toDateString() + "</p>\n  \t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t</div>";
+        return "<div class=\"col-lg-3 col-md-6 col-sm-12\">\n\t\t\t\t<div class=\"card\">\n  \t\t\t\t<img class=\"card-img-top\" src=" + this.image + " alt=\"location\">\n  \t\t\t\t<div class=\"card-body\">\n    \t\t\t<h5 class=\"card-title\">" + this.name + "</h5>\n    \t\t\t<p class=\"card-text\">" + this.address + " " + this.zipCode + "</p>\n    \t\t\t<p class=\"card-text\">" + this.city + "</p>\n    \t\t\t<p>" + this.date.toDateString() + "</p>\n  \t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t</div>";
     };
     // render function
     Place.prototype.display = function () {
@@ -90,13 +90,17 @@ locations.push(new Restaurant("resources/img/peggy.jpg", "Peggy Porschen", "Lond
 locations.push(new Restaurant("resources/img/milktrain.jpg", "Milk Train", "London", "12 Tavistock St", "WC2E", new Date(2018, 11, 14), "thai", "+43(1)5812308", "www.website.at"));
 locations.push(new Restaurant("resources/img/bao.jpeg", "BAO Soho", "London", "53 Lexington St", "W1F", new Date(2018, 11, 25), "thai", "+43(1)5812308", "www.website.at"));
 locations.push(new Restaurant("resources/img/poule.jpg", "La Poule au Pot", "London", "231 Ebury St", "SW1W", new Date(2018, 11, 14), "thai", "+43(1)5812308", "www.website.at"));
-//events
+// events
 locations.push(new Concert("resources/img/hozier.jpg", "Hozier", "Vienna", "Wiener Konzerthaus", "1030", new Date(2019, 3, 17), "22 febbraio 2019", "8pm", "from 50 euro"));
 locations.push(new Concert("resources/img/mitski.jpg", "Mitski", "Vienna", "Flex", "1010", new Date(2019, 3, 17), "22 febbraio 2019", "8pm", "from 50 euro"));
 locations.push(new Concert("resources/img/weyes.jpg", "Weyes Blood", "Vienna", "Flex", "1010", new Date(2019, 3, 17), "22 febbraio 2019", "8pm", "from 50 euro"));
 locations.push(new Concert("resources/img/florence.jpg", "Florence and the Machine", "Vienna", "Flex", "1010", new Date(2019, 3, 17), "22 febbraio 2019", "8pm", "from 50 euro"));
-console.log(locations);
+// renders in html
 for (var iter in locations) {
-    console.log(locations[iter]);
     locations[iter].display();
 }
+//test function
+function test() {
+    document.getElementById("test").style.color = "red";
+}
+document.getElementById("ascending").addEventListener("click", test, false);

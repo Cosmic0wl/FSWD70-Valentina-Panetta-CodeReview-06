@@ -1,0 +1,53 @@
+/* Bootstrap Overrides */
+.jumbotron {
+  color: white;
+  background-image: url("../img/hero.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 50vh;
+}
+
+/* Background colors */
+
+.lightpink {
+	background-color: #f9ecec;
+}
+
+.pink {
+	background-color: #f0d9da;
+}
+
+.babyblue {
+	background-color: #ecf2f9;
+}
+
+.cobalt {
+	background-color: #c8d9eb;
+} 
+
+/* Text Colors */
+
+.lightpink-text {
+	color: #f9ecec;
+}
+
+.pink-text {
+	color: #f0d9da;
+}
+
+.babyblue-text {
+	color: #ecf2f9;
+}
+
+.cobalt-text {
+	color: #c8d9eb;
+} 
+
+.black {
+	color: #000000;
+}
+
+.white {
+	color: #FFFFFF;
+}

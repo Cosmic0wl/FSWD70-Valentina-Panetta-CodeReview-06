@@ -48,7 +48,11 @@ class Restaurant extends Place {
 
 	// render function
 	display() {
-		return `<p></p>`;
+		return document.getElementById("restaurants").innerHTML +=
+		`${super.display()}
+		<p>${this.category}</p>
+		<p>${this.telephone}</p>
+		<p>${this.website}</p>`;
 	}
 }
 
@@ -65,7 +69,10 @@ class Events extends Place {
 
 	// render function
 	display() {
-		return `<p></p>`;
+		return document.getElementById("events").innerHTML +=
+		`${super.display()}
+		<p>${this.eventDate}, ${this.eventTime}</p>
+		<p>${this.ticketPrice}</p>`;
 	}
 }
 
@@ -73,10 +80,16 @@ class Events extends Place {
 
 
 var locations = [];
+// places
 locations.push(new Place("resources/img/karlsplatz.jpg", "Karlsplatz", "Vienna", "Karlsplatz 1", "1010", "26 Feb 2019"));
 locations.push(new Place("resources/img/tiergarten.jpg", "Tiergarten", "Vienna", "Maxingstraße 13b", "1130", "29 Feb 2019"));
 locations.push(new Place("resources/img/karlsplatz.jpg", "Karlsplatz", "Vienna", "Karlsplatz 1", "1010", "26 Feb 2019"));
 locations.push(new Place("resources/img/tiergarten.jpg", "Tiergarten", "Vienna", "Maxingstraße 13b", "1130", "29 Feb 2019"));
+
+// restaurants
+locations.push(new Restaurant("resources/img/lemonleaf.png", "Lemon Leaf", "Vienna", "Kettenbrckengasse 18", "1050", "30.02.2019", "thai", "+43(1)5812308", "www.website.at"));
+
+//events
 
 for(var iter in locations) {
 	locations[iter].display();

@@ -1,11 +1,12 @@
 /* Bootstrap Overrides */
 .jumbotron {
   color: white;
-  background-image: url("../img/hero.jpg");
+  background-image: url("../img/moher.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   height: 50vh;
+  opacity: 0.9;
 }
 
 /* Background colors */

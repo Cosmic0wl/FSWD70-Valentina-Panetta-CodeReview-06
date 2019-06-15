@@ -24,7 +24,7 @@ class Place {
   				<img class="card-img-top" src=${this.image} alt="location">
   				<div class="card-body">
     			<h5 class="card-title">${this.name}</h5>
-    			<p class="card-text">${this.address} ${this.zipCode}</p>
+    			<p class="card-text"><i class="fa fa-map-marker cobalt-text"></i> ${this.address} ${this.zipCode}</p>
     			<p class="card-text">${this.city}</p>
     			<small>Created: ${this.date.toDateString()}</small>
   				</div>
@@ -58,7 +58,7 @@ class Restaurant extends Place {
   				<img class="card-img-top" src=${this.image} alt="location">
   				<div class="card-body">
     			<h5 class="card-title">${this.name}</h5>
-    			<p class="card-text">${this.address} ${this.zipCode}</p>
+    			<p class="card-text"><i class="fa fa-map-marker cobalt-text"></i> ${this.address} ${this.zipCode}</p>
     			<p class="card-text">${this.city}</p>
     			<p class="card-text">${this.category}</p>
 				<p class="card-text">${this.telephone}</p>
@@ -77,11 +77,13 @@ class Restaurant extends Place {
 }
 
 class Concert extends Place {
+	venue: string;
 	eventDate: string;
 	eventTime: string;
 	ticketPrice: string;
-	constructor(image, name, city, address, zipCode, date, eventDate, eventTime, ticketPrice) {
+	constructor(image, name, city, address, zipCode, date, venue, eventDate, eventTime, ticketPrice) {
 		super(image, name, city, address, zipCode, date);
+		this.venue = venue;
 		this.eventDate = eventDate;
 		this.eventTime = eventTime;
 		this.ticketPrice = ticketPrice;
@@ -94,7 +96,8 @@ class Concert extends Place {
   				<img class="card-img-top" src=${this.image} alt="location">
   				<div class="card-body">
     			<h5 class="card-title">${this.name}</h5>
-    			<p class="card-text">${this.address} ${this.zipCode}</p>
+    			<p class="card-text">${this.venue}</p>
+    			<p class="card-text"><i class="fa fa-map-marker cobalt-text"></i> ${this.address} ${this.zipCode}</p>
     			<p class="card-text">${this.city}</p>
     			<p class="card-text">${this.eventDate}, ${this.eventTime}</p>
 				<p class="card-text">${this.ticketPrice}€</p>
@@ -115,8 +118,8 @@ class Concert extends Place {
 let locations: Array<Place> = [];
 
 // places
-locations.push(new Place("resources/img/cliffs.jpg", "Cliffs of Moher", "Linnascor", "County Clare", "037111", new Date(2018, 11, 24)));
-locations.push(new Place("resources/img/skeppsholmen.jpg", "Skeppsholmen", "Stockholm", "Djurgårdsslätten 51", "11521", new Date(2017, 11, 24)));
+locations.push(new Place("resources/img/cliffs.jpg", "Cliffs of Moher", "County Clare", "Linnascor", "037111", new Date(2018, 11, 24)));
+locations.push(new Place("resources/img/skeppsholmen.jpg", "Skeppsholmen Island", "Stockholm", "Skeppsholmen", "11149", new Date(2017, 11, 24)));
 locations.push(new Place("resources/img/highgate.jpg", "Highgate Cemetery", "London", "Swain's Lane", "N66PJ", new Date(2019, 7, 12)));
 locations.push(new Place("resources/img/holyrood.jpg", "Holyrood Abbey", "Edinburgh", "Canongate", "8DX", new Date(2018, 1, 24)));
 
@@ -127,10 +130,10 @@ locations.push(new Restaurant("resources/img/bao.jpeg", "BAO Soho", "London", "5
 locations.push(new Restaurant("resources/img/saint.jpg", "Saint Aymes", "London", "231 Ebury St", "SW1W", new Date(2017, 11, 14), "Coffee Shop", "+43(1)5812308", "https://www.instagram.com/saintaymes/?hl=en"));
 
 // events
-locations.push(new Concert("resources/img/hozier.jpg", "Hozier", "Vienna", "Wiener Konzerthaus", "1030", new Date(2019, 3, 17), "10 Sep 2019", "8pm", "from 50"));
-locations.push(new Concert("resources/img/mitski.jpg", "Mitski", "Vienna", "Flex", "1010", new Date(2019, 8, 17), "13 Aug 2019", "8pm", "from 30"));
-locations.push(new Concert("resources/img/weyes.jpg", "Weyes Blood", "Berlin", "Bi Nuu", "10977", new Date(2016, 3, 17), "26 Oct 2019", "8pm", "from 30"));
-locations.push(new Concert("resources/img/florence.jpg", "Florence and the Machine", "London", "Hyde Park", "142ha", new Date(2017, 3, 17), "13 Jul 2019", "8pm", "from 50"));
+locations.push(new Concert("resources/img/hozier.jpg", "Hozier", "Vienna", "Lothringerstraße 20", "1030", new Date(2019, 3, 17), "Wiener Konzerthaus", "10 Sep 2019", "8pm", "from 50"));
+locations.push(new Concert("resources/img/mitski.jpg", "Mitski", "Vienna", "Augartenbrücke 1", "1010", new Date(2019, 8, 17), "Flex", "13 Aug 2019", "8pm", "from 30"));
+locations.push(new Concert("resources/img/weyes.jpg", "Weyes Blood", "Berlin", "Schlesisches Tor", "10977", new Date(2016, 3, 17), "Bi Nuu", "26 Oct 2019", "8pm", "from 30"));
+locations.push(new Concert("resources/img/florence.jpg", "Florence and the Machine", "London", "Hyde Park", "142ha", new Date(2017, 3, 17), "Hyde Park", "13 Jul 2019", "8pm", "from 50"));
 
 
 // Sorting function ascending

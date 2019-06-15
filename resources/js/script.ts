@@ -58,9 +58,9 @@ class Restaurant extends Place {
   				<div class="card-body">
     			<h5 class="card-title">${this.name}</h5>
     			<p class="card-text"><i class="fa fa-map-marker darkpink-text"></i> ${this.address} ${this.zipCode}, ${this.city}</p>
-    			<p class="card-text">${this.category}</p>
-				<p class="card-text">${this.telephone}</p>
-				<p class="card-text"><a href="${this.website}" target="_blank" class="card-link darkpink-text">Go to Website</a></p>
+    			<p class="card-text"><i class="fa fa-star darkpink-text"></i> ${this.category}</p>
+				<p class="card-text"><i class="fa fa-phone darkpink-text"></i> ${this.telephone}</p>
+				<p class="card-text"><a href="${this.website}" target="_blank" class="card-link darkpink-text"><i class="fa fa-laptop darkpink-text"></i> Go to Website</a></p>
     			<small>Created: ${this.date.toDateString()}</small>
   				</div>
 				</div>
@@ -93,10 +93,10 @@ class Concert extends Place {
   				<img class="card-img-top d-none d-sm-none d-md-block" src=${this.image} alt="location">
   				<div class="card-body">
     			<h5 class="card-title">${this.name}</h5>
-    			<p class="card-text">${this.venue}</p>
+    			<p class="card-text"><i class="fa fa-music darkpink-text"></i> ${this.venue}</p>
     			<p class="card-text"><i class="fa fa-map-marker darkpink-text"></i> ${this.address} ${this.zipCode}, ${this.city}</p>
-    			<p class="card-text">${this.eventDate}, ${this.eventTime}</p>
-				<p class="card-text">${this.ticketPrice}€</p>
+    			<p class="card-text"><i class="fa fa-calendar darkpink-text"></i> ${this.eventDate}, ${this.eventTime}</p>
+				<p class="card-text"><i class="fa fa-money darkpink-text"></i> ${this.ticketPrice}€</p>
     			<small>Created: ${this.date.toDateString()}</small>
   				</div>
 				</div>

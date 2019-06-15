@@ -26,7 +26,7 @@ class Place {
     			<h5 class="card-title">${this.name}</h5>
     			<p class="card-text">${this.address} ${this.zipCode}</p>
     			<p class="card-text">${this.city}</p>
-    			<p>${this.date.toDateString()}</p>
+    			<small>Created: ${this.date.toDateString()}</small>
   				</div>
 				</div>
 				</div>`;
@@ -62,8 +62,8 @@ class Restaurant extends Place {
     			<p class="card-text">${this.city}</p>
     			<p class="card-text">${this.category}</p>
 				<p class="card-text">${this.telephone}</p>
-				<p class="card-text">${this.website}</p>
-    			<p class="card-text">${this.date.toDateString()}</p>
+				<p class="card-text"><a href="${this.website}" target="_blank" class="card-link">Go to Website</a></p>
+    			<small>Created: ${this.date.toDateString()}</small>
   				</div>
 				</div>
 				</div>`;
@@ -97,8 +97,8 @@ class Concert extends Place {
     			<p class="card-text">${this.address} ${this.zipCode}</p>
     			<p class="card-text">${this.city}</p>
     			<p class="card-text">${this.eventDate}, ${this.eventTime}</p>
-				<p class="card-text">${this.ticketPrice}</p>
-    			<p class="card-text">${this.date.toDateString()}</p>
+				<p class="card-text">${this.ticketPrice}€</p>
+    			<small>Created: ${this.date.toDateString()}</small>
   				</div>
 				</div>
 				</div>`;
@@ -116,21 +116,21 @@ let locations: Array<Place> = [];
 
 // places
 locations.push(new Place("resources/img/cliffs.jpg", "Cliffs of Moher", "Linnascor", "County Clare", "037111", new Date(2018, 11, 24)));
-locations.push(new Place("resources/img/skansen.jpg", "Skansen", "Stockholm", "Djurgårdsslätten 51", "11521", new Date(2017, 11, 24)));
+locations.push(new Place("resources/img/skeppsholmen.jpg", "Skeppsholmen", "Stockholm", "Djurgårdsslätten 51", "11521", new Date(2017, 11, 24)));
 locations.push(new Place("resources/img/highgate.jpg", "Highgate Cemetery", "London", "Swain's Lane", "N66PJ", new Date(2019, 7, 12)));
 locations.push(new Place("resources/img/holyrood.jpg", "Holyrood Abbey", "Edinburgh", "Canongate", "8DX", new Date(2018, 1, 24)));
 
 // restaurants
-locations.push(new Restaurant("resources/img/peggy.jpg", "Peggy Porschen", "London", "116 Ebury St", "SW1W", new Date(2019, 3, 25), "thai", "+43(1)5812308", "www.website.at"));
-locations.push(new Restaurant("resources/img/milktrain.jpg", "Milk Train", "London", "12 Tavistock St", "WC2E", new Date(2019, 3, 4), "thai", "+43(1)5812308", "www.website.at"));
-locations.push(new Restaurant("resources/img/bao.jpeg", "BAO Soho", "London", "53 Lexington St", "W1F", new Date(2017, 3, 25), "thai", "+43(1)5812308", "www.website.at"));
-locations.push(new Restaurant("resources/img/poule.jpg", "La Poule au Pot", "London", "231 Ebury St", "SW1W", new Date(2017, 11, 14), "thai", "+43(1)5812308", "www.website.at"));
+locations.push(new Restaurant("resources/img/peggyporschen.jpg", "Peggy Porschen", "London", "116 Ebury St", "SW1W", new Date(2019, 3, 25), "Bakery", "+43(1)5812308", "https://www.peggyporschen.com"));
+locations.push(new Restaurant("resources/img/milkinsta.jpg", "Milk Train", "London", "12 Tavistock St", "WC2E", new Date(2019, 3, 4), "Ice Cream Parlor", "+43(1)5812308", "https://www.milktraincafe.com"));
+locations.push(new Restaurant("resources/img/bao.jpeg", "BAO Soho", "London", "53 Lexington St", "W1F", new Date(2017, 3, 25), "Taiwanese", "+43(1)5812308", "https://baolondon.com/"));
+locations.push(new Restaurant("resources/img/saint.jpg", "Saint Aymes", "London", "231 Ebury St", "SW1W", new Date(2017, 11, 14), "Coffee Shop", "+43(1)5812308", "https://www.instagram.com/saintaymes/?hl=en"));
 
 // events
-locations.push(new Concert("resources/img/hozier.jpg", "Hozier", "Vienna", "Wiener Konzerthaus", "1030", new Date(2019, 3, 17), "22 febbraio 2019", "8pm", "from 50 euro"));
-locations.push(new Concert("resources/img/mitski.jpg", "Mitski", "Vienna", "Flex", "1010", new Date(2019, 8, 17), "22 febbraio 2019", "8pm", "from 50 euro"));
-locations.push(new Concert("resources/img/weyes.jpg", "Weyes Blood", "Vienna", "Flex", "1010", new Date(2016, 3, 17), "22 febbraio 2019", "8pm", "from 50 euro"));
-locations.push(new Concert("resources/img/florence.jpg", "Florence and the Machine", "Vienna", "Flex", "1010", new Date(2017, 3, 17), "22 febbraio 2019", "8pm", "from 50 euro"));
+locations.push(new Concert("resources/img/hozier.jpg", "Hozier", "Vienna", "Wiener Konzerthaus", "1030", new Date(2019, 3, 17), "10 Sep 2019", "8pm", "from 50"));
+locations.push(new Concert("resources/img/mitski.jpg", "Mitski", "Vienna", "Flex", "1010", new Date(2019, 8, 17), "13 Aug 2019", "8pm", "from 30"));
+locations.push(new Concert("resources/img/weyes.jpg", "Weyes Blood", "Berlin", "Bi Nuu", "10977", new Date(2016, 3, 17), "26 Oct 2019", "8pm", "from 30"));
+locations.push(new Concert("resources/img/florence.jpg", "Florence and the Machine", "London", "Hyde Park", "142ha", new Date(2017, 3, 17), "13 Jul 2019", "8pm", "from 50"));
 
 
 // Sorting function ascending

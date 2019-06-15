@@ -1,55 +1,110 @@
 /* Bootstrap Overrides */
 .jumbotron {
-  color: white;
-  background-image: url("../img/moher.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 50vh;
-  opacity: 0.9;
+    color: white;
+    background-image: url("../img/moher.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 60vh;
+}
+.jumbotron:hover {
+	cursor: pointer;
+}
+/* Titles */
+
+.amatic {
+    font-family: 'Amatic SC', sans-serif;
+    font-size: 9rem;
 }
 
+.just {
+    font-family: 'Just Another Hand', sans-serif;
+    font-size: 5rem;
+}
+
+.justNav {
+    font-family: 'Just Another Hand', sans-serif;
+    font-size: 2rem;
+}
+
+/* Lines */
+h2 {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #000;
+    line-height: 0.1em;
+    margin: 10px 0 20px;
+}
+
+h2 span {
+    background: #fff;
+    padding: 0 10px;
+}
 
 /* Background colors */
 
 .lightpink {
-	background-color: #f9ecec;
+    background-color: #f9ecec;
 }
 
 .pink {
-	background-color: #f0d9da;
+    background-color: #f0d9da;
 }
 
-.babyblue {
-	background-color: #ecf2f9;
+.darkpink {
+    background-color: #e9c7c8;
 }
 
-.cobalt {
-	background-color: #c8d9eb;
-} 
+.darkerpink {
+	color: #e2b5b6;
+}
+
+.rosegold {
+	background-color: #dea08c;
+}
+.card-img-top:hover {
+	background-color: #f9ecec;
+	cursor: pointer;
+	opacity: 0.9;
+	transition: 0.5s;
+}
+
+/* card */
+.card:hover {
+	cursor: pointer;
+}
+
+.card-link:hover {
+	color: #e2b5b6;
+	transition: 0,5s;
+}
 
 /* Text Colors */
 
 .lightpink-text {
-	color: #f9ecec;
+    color: #f9ecec;
 }
 
 .pink-text {
-	color: #f0d9da;
+    color: #f0d9da;
 }
 
-.babyblue-text {
-	color: #ecf2f9;
+.darkpink-text {
+    color: #e9c7c8;
 }
 
-.cobalt-text {
-	color: #c8d9eb;
-} 
 
-.black {
-	color: #000000;
+
+
+/* extra media queries */
+@media (max-width: 1200px) {
+    .amatic {
+        font-size: 5rem;
+    }
 }
 
-.white {
-	color: #FFFFFF;
+@media (max-width: 800px) {
+    .amatic {
+        font-size: 3rem;
+    }
 }

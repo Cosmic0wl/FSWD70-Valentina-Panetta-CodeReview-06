@@ -19,13 +19,12 @@ class Place {
 
 	//get card function
 	getCard(): string {
-		return `<div class="col-lg-3 col-md-6 col-sm-12">
+		return `<div class="col-lg-3 col-md-6 col-sm-12 my-2">
 				<div class="card">
-  				<img class="card-img-top" src=${this.image} alt="location">
+  				<img class="card-img-top d-none d-sm-none d-md-block" src=${this.image} alt="location">
   				<div class="card-body">
     			<h5 class="card-title">${this.name}</h5>
-    			<p class="card-text"><i class="fa fa-map-marker cobalt-text"></i> ${this.address} ${this.zipCode}</p>
-    			<p class="card-text">${this.city}</p>
+    			<p class="card-text"><i class="fa fa-map-marker darkpink-text"></i> ${this.address} ${this.zipCode}, ${this.city}</p>
     			<small>Created: ${this.date.toDateString()}</small>
   				</div>
 				</div>
@@ -53,16 +52,15 @@ class Restaurant extends Place {
 
 	//get card function
 	getCard(): string {
-		return `<div class="col-lg-3 col-md-6 col-sm-12">
+		return `<div class="col-lg-3 col-md-6 col-sm-12 my-2">
 		<div class="card">
-  				<img class="card-img-top" src=${this.image} alt="location">
+  				<img class="card-img-top d-none d-sm-none d-md-block" src=${this.image} alt="location">
   				<div class="card-body">
     			<h5 class="card-title">${this.name}</h5>
-    			<p class="card-text"><i class="fa fa-map-marker cobalt-text"></i> ${this.address} ${this.zipCode}</p>
-    			<p class="card-text">${this.city}</p>
+    			<p class="card-text"><i class="fa fa-map-marker darkpink-text"></i> ${this.address} ${this.zipCode}, ${this.city}</p>
     			<p class="card-text">${this.category}</p>
 				<p class="card-text">${this.telephone}</p>
-				<p class="card-text"><a href="${this.website}" target="_blank" class="card-link">Go to Website</a></p>
+				<p class="card-text"><a href="${this.website}" target="_blank" class="card-link darkpink-text">Go to Website</a></p>
     			<small>Created: ${this.date.toDateString()}</small>
   				</div>
 				</div>
@@ -91,14 +89,13 @@ class Concert extends Place {
 
 	//get card function
 	getCard(): string {
-		return `<div class="col-lg-3 col-md-6 col-sm-12">
+		return `<div class="col-lg-3 col-md-6 col-sm-12 my-2">
 		<div class="card">
-  				<img class="card-img-top" src=${this.image} alt="location">
+  				<img class="card-img-top d-none d-sm-none d-md-block" src=${this.image} alt="location">
   				<div class="card-body">
     			<h5 class="card-title">${this.name}</h5>
     			<p class="card-text">${this.venue}</p>
-    			<p class="card-text"><i class="fa fa-map-marker cobalt-text"></i> ${this.address} ${this.zipCode}</p>
-    			<p class="card-text">${this.city}</p>
+    			<p class="card-text"><i class="fa fa-map-marker darkpink-text"></i> ${this.address} ${this.zipCode}, ${this.city}</p>
     			<p class="card-text">${this.eventDate}, ${this.eventTime}</p>
 				<p class="card-text">${this.ticketPrice}€</p>
     			<small>Created: ${this.date.toDateString()}</small>
